@@ -23,18 +23,18 @@ public class InventoryService {
 	}
 	
 	public Medicine addItemToStore(Medicine m) {
-		return inventoryRepository.add(m);
+		return inventoryRepository.save(m);
 	}
 	
-	public boolean removeMedicine(Medicine m) {
-		return inventoryRepository.remove(m);
+	public void removeMedicine(Medicine m) {
+		inventoryRepository.delete(m);
 	}
 	
-	public Medicine findById(String id) {
-		return inventoryRepository.findById(id);
+	public Medicine findById(Long id) {
+		return inventoryRepository.findById(id).get();
 	}
 	
-	public boolean removeById(String id) {
-		return inventoryRepository.removeById(id);
+	public void removeById(Long id) {
+		inventoryRepository.deleteById(id);
 	}
 }

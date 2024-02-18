@@ -36,17 +36,17 @@ public class InventoryController {
 	}
 	
 	@DeleteMapping
-	public boolean removeItemFromInventory(@RequestBody Medicine m) {
-		return inventoryService.removeMedicine(m);
+	public void removeItemFromInventory(@RequestBody Medicine m) {
+		inventoryService.removeMedicine(m);
 	}
 	
 	@DeleteMapping(path = "/{id}")
-	public boolean removeItemFromInventoryById(@PathVariable String id) {
-		return inventoryService.removeById(id);
+	public void removeItemFromInventoryById(@PathVariable Long id) {
+		inventoryService.removeById(id);
 	}
 	
 	@GetMapping(path = "/{id}")
-	public Medicine findItem(@PathVariable String id) {
+	public Medicine findItem(@PathVariable Long id) {
 		return inventoryService.findById(id);
 	}
 	

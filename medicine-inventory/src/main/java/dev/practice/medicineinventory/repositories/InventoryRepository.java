@@ -1,13 +1,10 @@
 package dev.practice.medicineinventory.repositories;
 
-import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import dev.practice.medicineinventory.domain.Medicine;
 
-public interface InventoryRepository {
-	List<Medicine> findAll();
-	Medicine add(Medicine m);
-	boolean remove(Medicine m);
-	Medicine findById(String id);
-	boolean removeById(String id);
+public interface InventoryRepository extends JpaRepository<Medicine, Long> {
+	
 }
